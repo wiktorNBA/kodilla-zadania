@@ -1,0 +1,3 @@
+rootProject.name = 'sixone'
+include 'kodilla-testing'
+
