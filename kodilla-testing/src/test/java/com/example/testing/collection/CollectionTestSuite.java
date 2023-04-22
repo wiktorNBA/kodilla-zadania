@@ -10,7 +10,8 @@ import java.util.ArrayList;
 public class CollectionTestSuite {
 
     ArrayList<Integer> emptyArrayList = new ArrayList<Integer>();
-    ArrayList<Integer> filledArrayList = new ArrayList<Integer>();
+    ArrayList<Integer> filledArrayList1 = new ArrayList<Integer>();
+    ArrayList<Integer> filledArrayList2 = new ArrayList<Integer>();
     ArrayList<Integer> oddArrayList = new ArrayList<Integer>();
 
 
@@ -39,16 +40,14 @@ public class CollectionTestSuite {
     void testOddNumbersExterminatorEmptyList(){
 
         //Given
-        for (int i=0; i<20; i++){
-            filledArrayList.add(i);
-        }
+
 
         //When
         OddNumbersExterminator firstList = new OddNumbersExterminator(emptyArrayList);
         firstList.exterminate(emptyArrayList);
 
         //Then
-        Assertions.assertEquals(filledArrayList, emptyArrayList);
+        Assertions.assertEquals(filledArrayList1, emptyArrayList);
     }
 
     @DisplayName("When one list is filled")
@@ -57,16 +56,17 @@ public class CollectionTestSuite {
 
         //Given
         for (int i=0; i<20 ; i++){
-            if(filledArrayList.get(i) % 2 != 0){
-                oddArrayList.add(filledArrayList.get(i));
+            filledArrayList2.add(i);
+            if(filledArrayList2.get(i) % 2 == 0){
+                oddArrayList.add(filledArrayList2.get(i));
             }
         }
 
         //When
-        OddNumbersExterminator secondList = new OddNumbersExterminator(filledArrayList);
-        secondList.exterminate(filledArrayList);
+        OddNumbersExterminator secondList = new OddNumbersExterminator(filledArrayList2);
+        secondList.exterminate(filledArrayList2);
 
         //Then
-        Assertions.assertEquals(oddArrayList, filledArrayList);
+        Assertions.assertEquals(oddArrayList, filledArrayList2);
     }
 }
