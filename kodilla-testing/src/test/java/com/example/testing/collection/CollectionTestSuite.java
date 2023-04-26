@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.jupiter.api.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CollectionTestSuite {
 
@@ -55,18 +56,30 @@ public class CollectionTestSuite {
     public void testOddNumbersExterminatorNormalList(){
 
         //Given
-        for (int i=0; i<20 ; i++){
-            filledArrayList2.add(i);
-            if(filledArrayList2.get(i) % 2 == 0){
-                oddArrayList.add(filledArrayList2.get(i));
-            }
-        }
+        ArrayList<Integer> correctList= new ArrayList<>();
+        correctList.add(2);
+        correctList.add(4);
+        correctList.add(6);
+        correctList.add(8);
+        correctList.add(10);
+        ArrayList<Integer> listToExterminate= new ArrayList<>();
+        listToExterminate.add(1);
+        listToExterminate.add(2);
+        listToExterminate.add(3);
+        listToExterminate.add(4);
+        listToExterminate.add(5);
+        listToExterminate.add(6);
+        listToExterminate.add(7);
+        listToExterminate.add(8);
+        listToExterminate.add(9);
+        listToExterminate.add(10);
+
 
         //When
-        OddNumbersExterminator secondList = new OddNumbersExterminator(filledArrayList2);
-        secondList.exterminate(filledArrayList2);
+        OddNumbersExterminator exterminator = new OddNumbersExterminator((listToExterminate));
+        ArrayList<Integer> finalList= new ArrayList<>(exterminator.exterminate(listToExterminate));
 
         //Then
-        Assertions.assertEquals(oddArrayList, filledArrayList2);
+        Assertions.assertEquals(correctList, finalList);
     }
 }

@@ -1,29 +1,32 @@
 package com.example.testing.collection;
 
 import java.util.ArrayList;
+import java.util.*;
 
 
 public class OddNumbersExterminator {
-    ArrayList<Integer> numbers;
 
-    public OddNumbersExterminator (ArrayList<Integer> numbers) {
-        this.numbers = numbers;
+
+    ArrayList<Integer> listOfNumbers;
+
+    public OddNumbersExterminator(ArrayList<Integer> listOfNumbers) {
+        this.listOfNumbers = listOfNumbers;
     }
 
     public ArrayList<Integer> exterminate(ArrayList<Integer> numbers) {
 
-        int i=numbers.size();
-        while (i!=0) {
-            i--;
-            if (numbers.get(i) % 2 != 0) {
-                numbers.remove(i);
+        ArrayList <Integer> newList= new ArrayList<>();
+
+        for (Integer i : numbers){
+            if(i % 2 == 0){
+                newList.add(i);
             }
         }
-        System.out.println("Exterminating has ended. List size: " + numbers.size());
-        return numbers;
+
+        return newList;
     }
 
     int size() {
-        return numbers.size();
+        return listOfNumbers.size();
     }
 }
