@@ -1,3 +1,4 @@
 rootProject.name = 'sixone'
 include 'kodilla-testing'
+include 'kodilla-stream'
 
