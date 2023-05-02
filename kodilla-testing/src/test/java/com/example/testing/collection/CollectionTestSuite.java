@@ -12,8 +12,7 @@ public class CollectionTestSuite {
 
     ArrayList<Integer> emptyArrayList = new ArrayList<Integer>();
     ArrayList<Integer> filledArrayList1 = new ArrayList<Integer>();
-    ArrayList<Integer> filledArrayList2 = new ArrayList<Integer>();
-    ArrayList<Integer> oddArrayList = new ArrayList<Integer>();
+
 
 
     @BeforeEach
@@ -44,7 +43,7 @@ public class CollectionTestSuite {
 
 
         //When
-        OddNumbersExterminator firstList = new OddNumbersExterminator(emptyArrayList);
+        OddNumbersExterminator firstList = new OddNumbersExterminator();
         firstList.exterminate(emptyArrayList);
 
         //Then
@@ -56,27 +55,13 @@ public class CollectionTestSuite {
     public void testOddNumbersExterminatorNormalList(){
 
         //Given
-        ArrayList<Integer> correctList= new ArrayList<>();
-        correctList.add(2);
-        correctList.add(4);
-        correctList.add(6);
-        correctList.add(8);
-        correctList.add(10);
-        ArrayList<Integer> listToExterminate= new ArrayList<>();
-        listToExterminate.add(1);
-        listToExterminate.add(2);
-        listToExterminate.add(3);
-        listToExterminate.add(4);
-        listToExterminate.add(5);
-        listToExterminate.add(6);
-        listToExterminate.add(7);
-        listToExterminate.add(8);
-        listToExterminate.add(9);
-        listToExterminate.add(10);
+        ArrayList<Integer> correctList= new ArrayList<>(List.of(2,4,6));
+        ArrayList<Integer> listToExterminate= new ArrayList<>(List.of(1,2,3,4,5,6));
+
 
 
         //When
-        OddNumbersExterminator exterminator = new OddNumbersExterminator((listToExterminate));
+        OddNumbersExterminator exterminator = new OddNumbersExterminator();
         ArrayList<Integer> finalList= new ArrayList<>(exterminator.exterminate(listToExterminate));
 
         //Then

@@ -7,11 +7,9 @@ import java.util.*;
 public class OddNumbersExterminator {
 
 
-    ArrayList<Integer> listOfNumbers;
 
-    public OddNumbersExterminator(ArrayList<Integer> listOfNumbers) {
-        this.listOfNumbers = listOfNumbers;
-    }
+
+
 
     public ArrayList<Integer> exterminate(ArrayList<Integer> numbers) {
 
@@ -26,7 +24,5 @@ public class OddNumbersExterminator {
         return newList;
     }
 
-    int size() {
-        return listOfNumbers.size();
-    }
+
 }
