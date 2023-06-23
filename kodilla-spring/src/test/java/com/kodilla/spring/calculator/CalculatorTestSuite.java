@@ -11,11 +11,11 @@ import org.junit.jupiter.api.Assertions;
 @SpringBootTest
 public class CalculatorTestSuite {
 
-    Calculator calculator = new Calculator();
 
-//    Nie rozumiem czemu to nie dziala
-//    @Autowired
-//    private Calculator calculator;
+
+
+    @Autowired
+    private Calculator calculator;
 
     @Test
     public void testCalculations(){

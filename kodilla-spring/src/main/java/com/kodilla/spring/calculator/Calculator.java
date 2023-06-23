@@ -8,6 +8,7 @@ public class Calculator {
 
 
 
+
     @Autowired
     private Display display;
 
@@ -28,6 +29,7 @@ public class Calculator {
         display.displayValue(product);
         return product;
     }
+
 
     public double div(double a, double b){
         double quo = a / b;
