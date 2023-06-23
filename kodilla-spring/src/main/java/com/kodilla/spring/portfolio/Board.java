@@ -21,9 +21,11 @@ public class Board {
         return toDoList;
     }
 
+
     public TaskList getInProgressList() {
         return inProgressList;
     }
+
 
     public TaskList getDoneList() {
         return doneList;

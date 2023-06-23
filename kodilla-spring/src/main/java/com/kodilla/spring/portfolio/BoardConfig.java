@@ -24,6 +24,7 @@ public class BoardConfig {
         return new Board(toDoList, inProgressList, doneList);
     }
 
+
     @Bean(name = "toDoList")
     @Scope("prototype")
     public TaskList getToDoList() {
