@@ -1,0 +1,12 @@
+select i.id, i.summary, i.description, il.name as issueslist_name
+from issues as i
+inner join issueslists as il on i.ISSUESLIST_ID = il.id
+
+select i.id, i.summary, i.description, u.firstname, u.lastname
+from issues as i
+left join users as u on i.USER_ID_ASSIGNEDTO = u.ID
+
+select u.FIRSTNAME, u.LASTNAME, count(i.ID)
+from users as u
+join issues as i on u.ID = i.USER_ID_ASSIGNEDTO
+group by u.FIRSTNAME, u.LASTNAME
