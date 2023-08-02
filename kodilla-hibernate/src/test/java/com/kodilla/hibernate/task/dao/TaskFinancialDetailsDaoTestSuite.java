@@ -1,5 +1,6 @@
 package com.kodilla.hibernate.task.dao;
 
+import com.kodilla.hibernate.task.Task;
 import com.kodilla.hibernate.task.TaskFinancialDetails;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -12,12 +13,15 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
 class TaskFinancialDetailsDaoTestSuite {
 
     @Autowired
     private TaskFinancialDetailsDao taskFinancialDetailsDao;
+
+    private TaskDao taskDao;
 
     @Test
     void testFindByPaid() {
@@ -36,4 +40,6 @@ class TaskFinancialDetailsDaoTestSuite {
         //CleanUp
         taskFinancialDetailsDao.deleteById(id);
     }
+
+
 }
