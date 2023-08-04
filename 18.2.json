@@ -1,0 +1,11 @@
+{
+    "carName": "Corolla",
+    "carBrand": "Toyota",
+    "Engine capacity": "1.8 l"
+    "carSeat1": [{
+        "seatOne": ["Nylon","Blue"],
+        "seatTwo": ["Vinyl","Black"],
+        "seatThree": ["Leather","Red"],
+        "seatFour": ["Alcantara","Black"]
+    }],
+}
